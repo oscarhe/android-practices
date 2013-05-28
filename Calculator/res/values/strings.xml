@@ -25,6 +25,7 @@
     <string name="minus_button">-</string>
     <string name="mult_button">*</string>
     <string name="div_button">/</string>
+    <string name="equals_button">=</string>
     
 
 </resources>
