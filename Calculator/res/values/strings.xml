@@ -5,7 +5,7 @@
     <string name="action_settings">Settings</string>
     
     <!-- Displays equation and answer -->
-    <string name="equation_answer_textview">0</string>
+    <string name="equation_answer_edit_text"></string>
     
     <!-- Number buttons -->
     <string name="one_button">1</string>

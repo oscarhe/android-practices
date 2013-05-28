@@ -25,18 +25,18 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080011;
-        public static final int cancelEntryButton=0x7f08000d;
-        public static final int divButton=0x7f08000f;
+        public static final int cancelEntryButton=0x7f08000c;
+        public static final int divButton=0x7f08000e;
         public static final int eightButton=0x7f080006;
-        public static final int equalsButton=0x7f080010;
-        public static final int equationAnswerTextView=0x7f08000a;
+        public static final int equalsButton=0x7f08000f;
+        public static final int equationAnswerEditText=0x7f080010;
         public static final int fiveButton=0x7f080003;
         public static final int fourButton=0x7f080008;
-        public static final int minusButton=0x7f08000c;
-        public static final int multButton=0x7f08000e;
+        public static final int minusButton=0x7f08000b;
+        public static final int multButton=0x7f08000d;
         public static final int nineButton=0x7f080005;
         public static final int oneButton=0x7f080009;
-        public static final int plusButton=0x7f08000b;
+        public static final int plusButton=0x7f08000a;
         public static final int sevenButton=0x7f080007;
         public static final int sixButton=0x7f080002;
         public static final int threeButton=0x7f080000;
@@ -60,7 +60,7 @@ public final class R {
         public static final int equals_button=0x7f050012;
         /**  Displays equation and answer 
          */
-        public static final int equation_answer_textview=0x7f050002;
+        public static final int equation_answer_edit_text=0x7f050002;
         public static final int five_button=0x7f050007;
         public static final int four_button=0x7f050006;
         public static final int minus_button=0x7f05000f;
