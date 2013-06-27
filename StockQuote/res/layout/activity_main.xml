@@ -84,18 +84,20 @@
     </TableRow>
     
     <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/egg_shell" >
 
         <Button
             android:id="@+id/deleteStocksButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/delete_all_symbols"
             android:layout_span="2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/delete_all_symbols" />
 
-        </TableRow>
+    </TableRow>
+            
 
 </TableLayout>
