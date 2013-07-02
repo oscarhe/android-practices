@@ -10,7 +10,16 @@
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/contactName"
+        android:id="@+id/lastName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_5dp"
+        android:textColor="#444"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/firstName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_5dp"
