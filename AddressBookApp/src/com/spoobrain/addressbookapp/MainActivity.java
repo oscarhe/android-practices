@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -38,7 +36,7 @@ public class MainActivity extends ListActivity {
 				public void onItemClick(AdapterView<?> arg0, View view,
 						int arg2, long arg3) {
 					
-					contactId = (TextView) view.findViewById(R.id.contactID);
+					contactId = (TextView) view.findViewById(R.id.contactId);
 					
 					String contactIdValue = contactId.getText().toString();
 					
@@ -55,7 +53,7 @@ public class MainActivity extends ListActivity {
 					contactList,
 					R.layout.contact_entry,
 					new String[] {"contactId", "lastName", "firstName"},
-					new int[] {R.id.contactID, R.id.lastName, R.id.firstName});
+					new int[] {R.id.contactId, R.id.lastName, R.id.firstName});
 			
 			setListAdapter(adapter);
 			

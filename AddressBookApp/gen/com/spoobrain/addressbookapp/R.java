@@ -29,7 +29,7 @@ public final class R {
         public static final int addButton=0x7f080014;
         public static final int addContactTextView=0x7f080004;
         public static final int button1=0x7f080002;
-        public static final int contactID=0x7f080015;
+        public static final int contactId=0x7f080015;
         public static final int contactsTitleTextView=0x7f080001;
         public static final int deleteButton=0x7f08001a;
         public static final int editButton=0x7f080019;

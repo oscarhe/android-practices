@@ -162,7 +162,7 @@
 
         <Button
             android:id="@+id/editButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:onClick="editContact"
             android:layout_weight="1"
@@ -170,7 +170,7 @@
         
         <Button
             android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:onClick="removeContact"
             android:layout_weight="1"
