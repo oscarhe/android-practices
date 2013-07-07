@@ -1,0 +1,5 @@
+package com.spoobrain.addressbookapp;
+
+public class NewContact {
+
+}

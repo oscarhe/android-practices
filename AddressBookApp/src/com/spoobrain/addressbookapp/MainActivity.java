@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
 
-	Intent intent;
+	//Intent intent;
 	TextView contactId;
 	DBTools dbTools = new DBTools(this);
 	

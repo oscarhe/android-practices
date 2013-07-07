@@ -1,0 +1,16 @@
+package com.spoobrain.addressbookapp;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.ListActivity;
+import android.content.Intent;
+import android.view.Menu;
+import android.widget.TextView;
+
+public class MainActivity extends ListActivity {
+
+	Intent intent;
+	TextView contactId;
+	DBTools dbTools = new DBTools(this);
+
+}

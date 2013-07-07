@@ -1,0 +1,31 @@
+package com.spoobrain.addressbookapp;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.EditText;
+
+public class EditContact extends Activity {
+
+	EditText firstNameEditText, lastNameEditText, phoneNumberEditText, emailAddressEditText, homeAddressEditText;
+	
+	DBTools dbTools = new DBTools(this);
+	
+	public void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.edit_contact);
+		
+		firstNameEditText = (EditText) findViewById(R.id.firstNameEditText);
+		lastNameEditText = (EditText) findViewById(R.id.lastNameEditText);
+		phoneNumberEditText = (EditText) findViewById(R.id.phoneNumberEditText);
+		emailAddressEditText = (EditText) findViewById(R.id.emailAddressEditText);
+		homeAddressEditText = (EditText) findViewById(R.id.homeAddressEditText);
+		
+		// to get the intent from MainActivity.java so that the value stored from putExtra() can be retrieved
+		Intent intent = getIntent();
+		intent.getStringExtra("contactId");
+	
+	}
+	
+}

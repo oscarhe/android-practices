@@ -1,0 +1,17 @@
+package com.spoobrain.addressbookapp;
+
+import android.app.Activity;
+import android.widget.EditText;
+
+public class NewContact extends Activity {
+
+	EditText firstName, lastName, phoneNumber, emailAddress, homeAddress;
+	DBTools dbTools = new DBTools(this);
+	
+	public void onCreate(Bundle savedInstanceState) {
+		
+		
+		
+	}
+	
+}

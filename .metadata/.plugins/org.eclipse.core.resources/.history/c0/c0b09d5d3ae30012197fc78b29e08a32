@@ -1,0 +1,12 @@
+package com.spoobrain.addressbookapp;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.ListActivity;
+import android.view.Menu;
+
+public class MainActivity extends ListActivity {
+
+	
+
+}

@@ -1,0 +1,49 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000" >
+
+        <TextView
+            android:id="@+id/contactsTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:text="@string/contacts_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFF"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button1"
+            android:background="#444"
+            android:onClick="showAddContact"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:text="@string/add_button" />
+
+    </TableRow>
+    
+    <TableRow 
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000" >
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </ListView>
+        
+    </TableRow>
+
+</TableLayout>

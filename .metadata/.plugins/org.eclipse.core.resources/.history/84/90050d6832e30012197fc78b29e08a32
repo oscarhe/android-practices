@@ -1,0 +1,5 @@
+package com.spoobrain.stockquote;
+
+public class StockInfo {
+
+}
