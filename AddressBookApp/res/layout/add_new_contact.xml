@@ -69,7 +69,6 @@
             android:inputType="textPersonName"
             android:padding="@dimen/padding_5dp" >
 
-            <requestFocus />
         </EditText>
 
     </TableRow>
@@ -96,7 +95,6 @@
             android:inputType="phone"
             android:padding="@dimen/padding_5dp" >
 
-            <requestFocus />
         </EditText>
 
     </TableRow>
@@ -123,7 +121,6 @@
             android:inputType="textEmailAddress"
             android:padding="@dimen/padding_5dp" >
 
-            <requestFocus />
         </EditText>
 
     </TableRow>
@@ -150,7 +147,6 @@
             android:inputType="text|textPostalAddress"
             android:padding="@dimen/padding_5dp" >
 
-            <requestFocus />
         </EditText>
 
     </TableRow>
