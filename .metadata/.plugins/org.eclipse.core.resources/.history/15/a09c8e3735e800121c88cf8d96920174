@@ -1,0 +1,5 @@
+package com.spoobrain.studentgrades;
+
+public class DBTools extends SQLiteOpenHelper {
+
+}

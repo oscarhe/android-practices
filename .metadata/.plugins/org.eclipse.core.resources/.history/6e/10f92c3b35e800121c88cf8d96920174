@@ -1,0 +1,15 @@
+package com.spoobrain.studentgrades;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DBTools extends SQLiteOpenHelper {
+
+	public DBTools(Context applicationContext) {
+		
+		super(applicationContext, "studentGrades.db", null, 1);
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Grades</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="classesTextView">Classes</string>
+    <string name="addClassButton">Add</string>
+    
+    <string name="addClassTextView">Add Class</string>
+    <string name="classTypeTextView">Type</string>
+    <string name="classNumberTextView">Number</string>
+    <string name="classSectionTextView">Section</string>
+    <string name="classYearTextView">Year</string>
+
+</resources>
