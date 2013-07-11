@@ -1,5 +1,8 @@
 package com.spoobrain.studentgrades;
 
+import java.util.HashMap;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -66,5 +69,131 @@ public class DBTools extends SQLiteOpenHelper {
 		onCreate(db);
 		
 	}
+	
+	public void insertClass(HashMap<String, String> queryValues) {
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+		
+		values.put("className", queryValues.get("className"));
+		values.put("classType", queryValues.get("classType"));
+		values.put("classNumber", queryValues.get("classNumber"));
+		values.put("classSection", queryValues.get("classSection"));
+		values.put("classYear", queryValues.get("classYear"));
+		
+		db.insert("classes", null, values);
+		db.close();
+		
+	}
+	
+	public void insertStudent(HashMap<String, String> queryValues) {
 
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+
+		values.put("studentName", queryValues.get("studentName"));
+		values.put("classId", queryValues.get("classId"));
+
+		db.insert("students", null, values);
+		db.close();
+
+	}
+	
+	public void insertStudentInfo(HashMap<String, String> queryValues) {
+
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+
+		values.put("studentDOB", queryValues.get("studentDOB"));
+		values.put("studentGPA", queryValues.get("studentGPA"));
+		
+		db.insert("student_info", null, values);
+		db.close();
+
+	}
+	
+	public int updateClass(HashMap<String, String> queryValues) {
+
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+
+		values.put("className", queryValues.get("className"));
+		values.put("classType", queryValues.get("classType"));
+		values.put("classNumber", queryValues.get("classNumber"));
+		values.put("classSection", queryValues.get("classSection"));
+		values.put("classYear", queryValues.get("classYear"));
+
+		return db.update("classes", values, "classId " + " = ?", new String[] {queryValues.get("classId")});
+
+	}
+	
+	public int updateStudent(HashMap<String, String> queryValues) {
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+
+		values.put("studentName", queryValues.get("studentName"));
+		values.put("classId", queryValues.get("classId"));
+		
+		return db.update("students", values, "studentId " + " = ?", new String[] {queryValues.get("studentId")});
+		
+	}
+	
+	public int updateStudentInfo(HashMap<String, String> queryValues) {
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+
+		values.put("studentDOB", queryValues.get("studentDOB"));
+		values.put("studentGPA", queryValues.get("studentGPA"));
+		
+		return db.update("student_info", values, "studentId " + " = ?", new String[] {queryValues.get("studentId")});
+	
+	}
+	
+	public void deleteClass(String id) {
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		String query = "DELETE FROM classes " +
+					   "WHERE classId = '" + id + "'";
+		
+		db.execSQL(query);
+		
+		db.close();			   
+	
+	}
+	public void deleteStudent(String id) {
+
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		String query = "DELETE FROM students " +
+				"WHERE studentId = '" + id + "'";
+
+		db.execSQL(query);
+
+		db.close();			   
+
+	}
+	public void deleteStudentInfo(String id) {
+
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		String query = "DELETE FROM student_info " +
+				"WHERE studentId = '" + id + "'";
+
+		db.execSQL(query);
+
+		db.close();			   
+
+	}
+	
 }
+
+
