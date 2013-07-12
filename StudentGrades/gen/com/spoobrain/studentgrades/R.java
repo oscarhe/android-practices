@@ -31,9 +31,13 @@ public final class R {
     }
     public static final class id {
         public static final int TableLayout1=0x7f090000;
-        public static final int action_settings=0x7f090016;
+        public static final int TableRow1=0x7f090016;
+        public static final int action_settings=0x7f09001a;
         public static final int addClassButton=0x7f090003;
         public static final int addClassTitleTextView=0x7f090006;
+        public static final int classId=0x7f090017;
+        public static final int className=0x7f090019;
+        public static final int classType=0x7f090018;
         public static final int classesList=0x7f090005;
         public static final int classesTitleTextView=0x7f090002;
         public static final int nameEditText=0x7f090009;
@@ -57,6 +61,7 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int add_new_class=0x7f030001;
+        public static final int class_entry=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;

@@ -1,9 +1,11 @@
 package com.spoobrain.studentgrades;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -169,6 +171,7 @@ public class DBTools extends SQLiteOpenHelper {
 		db.close();			   
 	
 	}
+	
 	public void deleteStudent(String id) {
 
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -181,6 +184,7 @@ public class DBTools extends SQLiteOpenHelper {
 		db.close();			   
 
 	}
+	
 	public void deleteStudentInfo(String id) {
 
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -192,6 +196,39 @@ public class DBTools extends SQLiteOpenHelper {
 
 		db.close();			   
 
+	}
+	
+	public ArrayList<HashMap<String, String>> getAllClasses() {
+		
+		ArrayList<HashMap<String, String>> classesArrayList = new ArrayList<HashMap<String, String>>();
+		
+		String query = "SELECT * FROM classes ORDER BY className";
+		
+		SQLiteDatabase db = this.getReadableDatabase();
+		
+		Cursor cursor = db.rawQuery(query, null);
+		
+		if(cursor.moveToFirst()) {
+			
+			do {
+				
+				HashMap<String, String> classesMap = new HashMap<String, String>();
+				
+				classesMap.put("classId", cursor.getString(0));
+				classesMap.put("className", cursor.getString(1));
+				classesMap.put("classType", cursor.getString(2));
+				classesMap.put("classNumber", cursor.getString(3));
+				classesMap.put("classSection", cursor.getString(4));
+				classesMap.put("classYear", cursor.getString(5));
+				
+				classesArrayList.add(classesMap);
+				
+			} while(cursor.moveToNext());
+			
+		}
+		
+		return classesArrayList;
+		
 	}
 	
 }
