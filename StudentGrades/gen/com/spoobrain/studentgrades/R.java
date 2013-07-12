@@ -35,9 +35,9 @@ public final class R {
         public static final int action_settings=0x7f09001a;
         public static final int addClassButton=0x7f090003;
         public static final int addClassTitleTextView=0x7f090006;
-        public static final int classId=0x7f090017;
-        public static final int className=0x7f090019;
-        public static final int classType=0x7f090018;
+        public static final int classIdTextView=0x7f090017;
+        public static final int classNameTextView=0x7f090019;
+        public static final int classTypeTextView=0x7f090018;
         public static final int classesList=0x7f090005;
         public static final int classesTitleTextView=0x7f090002;
         public static final int nameEditText=0x7f090009;

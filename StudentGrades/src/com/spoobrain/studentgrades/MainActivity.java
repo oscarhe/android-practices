@@ -39,7 +39,7 @@ public class MainActivity extends ListActivity {
 				public void onItemClick(AdapterView<?> arg0, View view,
 						int arg2, long arg3) {
 					
-					classId = (TextView) view.findViewById(R.id.classId);
+					classId = (TextView) view.findViewById(R.id.classIdTextView);
 					String classIdValue = classId.getText().toString();
 					
 					Intent intent = new Intent(getApplication(), EditClass.class);
@@ -56,7 +56,7 @@ public class MainActivity extends ListActivity {
 					allClasses, 
 					R.layout.class_entry, 
 					new String[] {"classId", "classType", "className"}, 
-					new int[] {R.id.classId, R.id.classType, R.id.className});
+					new int[] {R.id.classIdTextView, R.id.classTypeTextView, R.id.classNameTextView});
 			
 			setListAdapter(adapter);
 			
