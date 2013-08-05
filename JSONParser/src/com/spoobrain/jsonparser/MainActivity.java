@@ -3,12 +3,15 @@ package com.spoobrain.jsonparser;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,6 +20,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
@@ -116,6 +120,21 @@ public class MainActivity extends Activity {
 				daysHigh = quote.getString("DaysHigh");
 				change = quote.getString("Change");
 				
+				JSONArray queryArr = quote.names();
+				
+				List<String> list = new ArrayList<String>();
+				for(int i = 0; i < queryArr.length(); i++) {
+					
+					list.add(queryArr.getString(i));
+					
+				}
+				
+				for(String item : list) {
+					
+					Log.v("JSON ITEMS ", item);
+					
+				}
+				
 			} catch(JSONException e) {
 				
 				e.printStackTrace();
@@ -128,7 +147,13 @@ public class MainActivity extends Activity {
 		@Override
 		protected void onPostExecute(String result) {
 			
-			
+			TextView line1 = (TextView) findViewById(R.id.line1);
+			TextView line2 = (TextView) findViewById(R.id.line2);
+			TextView line3 = (TextView) findViewById(R.id.line3);
+
+			line1.setText("Stock: " + symbol + " : " + change);
+			line2.setText("DaysLow: " + daysLow);
+			line3.setText("DaysHigh: " + daysHigh);
 			
 		}
 		
