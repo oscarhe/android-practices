@@ -1,8 +1,21 @@
 package com.spoobrain.jsonparser;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
@@ -27,8 +40,96 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected String doInBackground(String... arg0) {
-			// TODO Auto-generated method stub
-			return null;
+
+			// To be able to download from YQL
+			DefaultHttpClient client = new DefaultHttpClient(new BasicHttpParams());
+		
+			HttpPost post = new HttpPost(yahooStockURL);
+			
+			// To specify json
+			post.setHeader("Content-type", "application/json");
+			
+			InputStream input = null;
+			
+			String result = "";
+			
+			try {
+				
+				HttpResponse response = client.execute(post);
+				
+				// Will hold all the content from URL
+				HttpEntity entity = response.getEntity();
+				input = entity.getContent();
+				
+				BufferedReader br = new BufferedReader(new InputStreamReader(input, "UTF-8"), 8);
+				StringBuilder sb = new StringBuilder();
+				
+				String line;
+				
+				while((line = br.readLine()) != null) {
+					
+					sb.append(line + "\n");
+					
+				}
+				
+				result = sb.toString();
+				
+			} catch(Exception e) {
+				
+				e.printStackTrace();
+				
+			} finally {
+				
+				try {
+					
+					if(input != null) input.close();
+					
+				} catch(Exception e) {
+					
+					e.printStackTrace();
+					
+				}
+				
+			}
+			
+			// Holds the key value pairs for json
+			JSONObject json;
+			
+			try {
+				
+				// get rid of cbfunc
+				result = result.substring(7);
+				result = result.substring(0, result.length()-2);
+				
+				Log.v("JSONParser RESULT ", result);
+				
+				json = new JSONObject(result);
+				
+				JSONObject query = json.getJSONObject("query");
+				
+				JSONObject results = query.getJSONObject("results");
+				
+				JSONObject quote = results.getJSONObject("quote");
+				
+				symbol = quote.getString("symbol");
+				daysLow = quote.getString("DaysLow");
+				daysHigh = quote.getString("DaysHigh");
+				change = quote.getString("Change");
+				
+			} catch(JSONException e) {
+				
+				e.printStackTrace();
+				
+			}
+			
+			return result;
+		}
+		
+		@Override
+		protected void onPostExecute(String result) {
+			
+			
+			
 		}
 		
 		
