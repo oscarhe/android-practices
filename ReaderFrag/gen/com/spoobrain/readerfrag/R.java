@@ -16,17 +16,24 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f040002;
         public static final int article_padding=0x7f040000;
+        public static final int article_text_size=0x7f040001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080000;
+        public static final int action_settings=0x7f080004;
+        public static final int articleTextView=0x7f080000;
+        public static final int articles_fragment=0x7f080003;
+        public static final int fragment_container=0x7f080001;
+        public static final int headlines_fragment=0x7f080002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int article_view=0x7f030001;
+        public static final int news_articles=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f070000;
